@@ -104,3 +104,29 @@ input.search-bar {
     font-size: 20px;
   }
 }
+.title {
+  text-align: center;
+}
+.topicsContents {
+  display: flex;
+  align-items: center;
+  margin: 100px;
+  gap: 70px;
+}
+.topic1 a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 13px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.topic1 a:hover {
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
+  transition: 0.5s;
+}

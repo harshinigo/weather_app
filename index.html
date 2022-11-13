@@ -5,26 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="./style.css" /> 
+    <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;200;400;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;200;400;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="./script.js" defer></script>
-</head>
+  </head>
   <body>
     <section class="home-page">
       <div class="local-news">
         <h1>Top 3 local news of the city</h1>
       </div>
       <div class="toptopic">
-        <ul>
-          <li> 
-            <h1 class="topic1">Title 1</h1>
-            <img src="" alt="">
-            <p class="information1">information </br>
-              <a href=" " target="_blank">link to the Topic 1</a></p>
-            </li> 
-            <!-- <li>
+        <div class="topic1">
+          <h1 class="title">Title 1</h1>
+          <div class="topicsContents">
+            <img class="image" height="250px" width="350px" src="" alt="" />
+            <div>
+              <p class="information"></p>
+              <a class="url" href=" " target="_blank">link to the Topic 1</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <li>
               <h1 class="topic2">Topic 2</h1>
               <p class="information1">information </br>
                 <a href=" " target="_blank">link to the Topic 2</a></p>
@@ -34,7 +41,6 @@
                 <p class="information1">information </br>
                   <a href=" " target="_blank">link to the Topic 3</a></p>
                 </li> -->
-              </ul>
       </div>
       <div class="card">
         <div class="search">
@@ -60,15 +66,11 @@
           <h2 class="city"></h2>
           <h1 class="temp"></h1>
           <div class="describe">
-            <img
-              src=" "
-              alt=""
-              class="icon"
-            />
-            <div class="description"> </div>
+            <img src=" " alt="" class="icon" />
+            <div class="description"></div>
           </div>
-          <div class="humidity"> </div>
-          <div class="wind"> </div>
+          <div class="humidity"></div>
+          <div class="wind"></div>
         </div>
       </div>
     </section>

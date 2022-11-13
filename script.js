@@ -33,10 +33,63 @@ let weather = {
       "Wind speed: " + speed + " km/h";
     document.querySelector(".weather").classList.remove("loading");
     document.body.style.backgroundImage =
-      "url('https://source.unsplash.com/1600x900/?" + name + "')";
+      "linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?" +
+      name +
+      "')";
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
+  },
+};
+
+//fetching news data from a website providing api
+let news = {
+  newsApiKey: "54e6adeffe214d468d4772603a7eea6a",
+  fetchNews: function (city) {
+    fetch(
+      "https://newsapi.org/v2/everything?q=" +
+        city +
+        "&apiKey=" +
+        this.newsApiKey
+    )
+      .then((response) => {
+        if (!response.ok) {
+          alert("No News found.");
+          throw new Error("No News found.");
+        }
+        return response.json();
+      })
+      .then((data) => this.displayNews(data));
+  },
+
+  displayNews: function (data) {
+    console.log(data.articles[2]);
+
+    for (let i = 0; i <= 2; i++) {
+      // "title = " + data.articles[i].title,
+      // "urlToImage = " + data.articles[i].urlToImage,
+      // "description = " + data.articles[i].description,
+      // "url = " + data.articles[i].url + "</br>"
+      let li = document.createElement("li");
+      let a = document.createElement("a");
+      let h1 = document.createElement("h1");
+      (document.querySelector(".title").innerText = data.articles[i].title),
+        (document.querySelector(".image").src = data.articles[i].urlToImage),
+        (document.querySelector(".information").innerText =
+          data.articles[i].description),
+        (document.querySelector(".url").href = data.articles[i].url);
+
+      // text += cars[i] + "<br>";
+    }
+
+    // document.querySelector(".title").innerText = data.articles[0].title;
+    // document.querySelector(".image").src = data.articles[0].urlToImage;
+    // document.querySelector(".information").innerText =
+    //   data.articles[0].description;
+    // document.querySelector(".url").href = data.articles[0].url;
+  },
+  search: function () {
+    this.fetchNews(document.querySelector(".search-bar").value);
   },
 };
 
@@ -52,34 +105,5 @@ document
     }
   });
 
-weather.fetchWeather("Mysore");
-
-//fetching news data from a website providing api
-
-const newsApiKey = "54e6adeffe214d468d4772603a7eea6a";
-function fetchNews(city) {
-  fetch("https://newsapi.org/v2/everything?q=" + city + "&apiKey=" + newsApiKey)
-    .then((response) => {
-      if (!response.ok) {
-        alert("No News found.");
-        throw new Error("No News found.");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data.articles[0]);
-      const html = data.articles.map((user) => {
-        return `<p>Title: ${user.title}</p>
-        <p>Description: ${user.description}</p>
-        <p>url: ${user.url}</p>`;
-      });
-      console.log(html);
-      document
-        .querySelector()
-        .insertAdjacentHTML("afterbegin", "<h1>Hello</h1>");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
-fetchNews("Mysore");
+weather.fetchWeather("brisbane");
+news.fetchNews("brisbane");
