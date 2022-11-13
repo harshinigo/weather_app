@@ -73,11 +73,11 @@ let news = {
       let li = document.createElement("li");
       let a = document.createElement("a");
       let h1 = document.createElement("h1");
-      (document.querySelector(".title").innerText = data.articles[i].title),
-        (document.querySelector(".image").src = data.articles[i].urlToImage),
+      (document.querySelector(".title").innerText = data.articles[0].title),
+        (document.querySelector(".image").src = data.articles[0].urlToImage),
         (document.querySelector(".information").innerText =
-          data.articles[i].description),
-        (document.querySelector(".url").href = data.articles[i].url);
+          data.articles[0].description),
+        (document.querySelector(".url").href = data.articles[0].url);
 
       // text += cars[i] + "<br>";
     }
