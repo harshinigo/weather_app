@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;200;400;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <script src="./script.js" defer></script>
+</head>
+  <body>
+    <section class="home-page">
+      <div class="local-news">
+        <h1>Top 3 local news of the city</h1>
+      </div>
+      <div class="toptopic">
+        <ul>
+          <li> 
+            <h1 class="topic1">Title 1</h1>
+            <img src="" alt="">
+            <p class="information1">information </br>
+              <a href=" " target="_blank">link to the Topic 1</a></p>
+            </li> 
+            <!-- <li>
+              <h1 class="topic2">Topic 2</h1>
+              <p class="information1">information </br>
+                <a href=" " target="_blank">link to the Topic 2</a></p>
+              </li>
+              <li>
+                <h1 class="topic3">Topic 3</h1>
+                <p class="information1">information </br>
+                  <a href=" " target="_blank">link to the Topic 3</a></p>
+                </li> -->
+              </ul>
+      </div>
+      <div class="card">
+        <div class="search">
+          <input type="text" class="search-bar" placeholder="Search location" />
+          <button>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              version="1.1"
+              viewBox="0 0 16 16"
+              height="1.5em"
+              width="1.5em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.504 13.616l-3.79-3.223c-0.392-0.353-0.811-0.514-1.149-0.499 0.895-1.048 1.435-2.407 1.435-3.893 0-3.314-2.686-6-6-6s-6 2.686-6 6 2.686 6 6 6c1.486 0 2.845-0.54 3.893-1.435-0.016 0.338 0.146 0.757 0.499 1.149l3.223 3.79c0.552 0.613 1.453 0.665 2.003 0.115s0.498-1.452-0.115-2.003zM6 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="weather loading">
+          <h2 class="city"></h2>
+          <h1 class="temp"></h1>
+          <div class="describe">
+            <img
+              src=" "
+              alt=""
+              class="icon"
+            />
+            <div class="description"> </div>
+          </div>
+          <div class="humidity"> </div>
+          <div class="wind"> </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
