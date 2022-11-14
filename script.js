@@ -44,12 +44,13 @@ let weather = {
 
 //fetching news data from a website providing api
 let news = {
-  // newsApiKey: "54e6adeffe214d468d4772603a7eea6a",
+  newsApiKey: "54e6adeffe214d468d4772603a7eea6a",
   fetchNews: function (city) {
     fetch(
       "https://newsapi.org/v2/everything?q=" +
         city +
-        "&apiKey=54e6adeffe214d468d4772603a7eea6a"
+        "&apiKey=" +
+        this.newsApiKey
     )
       .then((response) => {
         if (!response.ok) {
@@ -62,7 +63,7 @@ let news = {
   },
 
   displayNews: function (data) {
-    console.log(data.articles[2]);
+    console.log(data.articles[0]);
 
     for (let i = 0; i <= 2; i++) {
       // "title = " + data.articles[i].title,
