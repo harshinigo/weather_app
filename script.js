@@ -21,7 +21,6 @@ let weather = {
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
-
     document.querySelector(".city").innerText = "Weather in " + name;
     document.querySelector(".icon").src =
       "https://openweathermap.org/img/wn/" + icon + ".png";
@@ -66,10 +65,6 @@ let news = {
     console.log(data[0]);
 
     for (let i = 0; i <= 2; i++) {
-      // "title = " + data.articles[i].title,
-      // "urlToImage = " + data.articles[i].urlToImage,
-      // "description = " + data.articles[i].description,
-      // "url = " + data.articles[i].url + "</br>"
       let li = document.createElement("li");
       let a = document.createElement("a");
       let h1 = document.createElement("h1");
@@ -80,12 +75,6 @@ let news = {
           data[0].description),
         (document.querySelector(".url").href = data[0].url);
     }
-
-    // document.querySelector(".title").innerText = data.articles[0].title;
-    // document.querySelector(".image").src = data.articles[0].urlToImage;
-    // document.querySelector(".information").innerText =
-    //   data.articles[0].description;
-    // document.querySelector(".url").href = data.articles[0].url;
   },
   search: function () {
     this.fetchNews(document.querySelector(".search-bar").value);
@@ -94,6 +83,7 @@ let news = {
 
 document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
+  news.search();
 });
 
 document
@@ -101,8 +91,9 @@ document
   .addEventListener("keyup", function (event) {
     if (event.key == "Enter") {
       weather.search();
+      news.search();
     }
   });
 
-weather.fetchWeather("brisbane");
-news.fetchNews("brisbane");
+weather.fetchWeather("australia");
+news.fetchNews("australia");
