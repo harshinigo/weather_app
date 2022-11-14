@@ -63,18 +63,16 @@ let news = {
 
   displayNews: function (data) {
     console.log(data[0]);
-
-    for (let i = 0; i <= 2; i++) {
-      let li = document.createElement("li");
-      let a = document.createElement("a");
-      let h1 = document.createElement("h1");
-      a.setAttribute("href", data[0].url);
-      (document.querySelector(".title").innerText = data[0].title),
-        (document.querySelector(".image").src = data[0].urlToImage),
-        (document.querySelector(".information").innerText =
-          data[0].description),
-        (document.querySelector(".url").href = data[0].url);
-    }
+    // for (let i = 0; i <= 2; i++) {
+    // let li = document.createElement("li");
+    // let a = document.createElement("a");
+    // let h1 = document.createElement("h1");
+    // a.setAttribute("href", data[0].url);
+    (document.querySelector(".title").innerText = data[0].title),
+      (document.querySelector(".image").src = data[0].urlToImage),
+      (document.querySelector(".information").innerText = data[0].description),
+      (document.querySelector(".url").href = data[0].url);
+    // }
   },
   search: function () {
     this.fetchNews(document.querySelector(".search-bar").value);
@@ -95,5 +93,5 @@ document
     }
   });
 
-weather.fetchWeather("australia");
-news.fetchNews("australia");
+weather.fetchWeather("bangalore");
+news.fetchNews("bangalore");
