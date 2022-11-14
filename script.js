@@ -59,11 +59,11 @@ let news = {
         }
         return response.json();
       })
-      .then((data) => this.displayNews(data));
+      .then((data) => this.displayNews(data.articles));
   },
 
   displayNews: function (data) {
-    console.log(data.articles[0]);
+    console.log(data[0]);
 
     for (let i = 0; i <= 2; i++) {
       // "title = " + data.articles[i].title,
@@ -73,13 +73,12 @@ let news = {
       let li = document.createElement("li");
       let a = document.createElement("a");
       let h1 = document.createElement("h1");
-      (document.querySelector(".title").innerText = data.articles[0].title),
-        (document.querySelector(".image").src = data.articles[0].urlToImage),
+      a.setAttribute("href", data[0].url);
+      (document.querySelector(".title").innerText = data[0].title),
+        (document.querySelector(".image").src = data[0].urlToImage),
         (document.querySelector(".information").innerText =
-          data.articles[0].description),
-        (document.querySelector(".url").href = data.articles[0].url);
-
-      // text += cars[i] + "<br>";
+          data[0].description),
+        (document.querySelector(".url").href = data[0].url);
     }
 
     // document.querySelector(".title").innerText = data.articles[0].title;
