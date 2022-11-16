@@ -130,3 +130,6 @@ input.search-bar {
   color: #000;
   transition: 0.5s;
 }
+
+@media (max-width: 700px) {
+}
