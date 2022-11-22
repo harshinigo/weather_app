@@ -18,8 +18,25 @@ if (navigator.geolocation) {
         news.fetchNews(city);
       });
   });
-}
+} else {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "70e40df233msh1868816a4a5ed51p126389jsn39c7ac2d41bf",
+      "X-RapidAPI-Host": "ip-geolocation-ipwhois-io.p.rapidapi.com",
+    },
+  };
 
+  fetch("https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/", options)
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      let city = response.city;
+      weather.fetchWeather(city);
+      news.fetchNews(city);
+    })
+    .catch((err) => console.error(err));
+}
 let weather = {
   apiKey: "20957daa73739ee04a5f325baf22699d",
   fetchWeather: function (city) {
@@ -31,7 +48,7 @@ let weather = {
     )
       .then((response) => {
         if (!response.ok) {
-          alert("No weather found.");
+          alert("No weather found. Please check for spellings");
           throw new Error("No weather found.");
         }
         return response.json();
