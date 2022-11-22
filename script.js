@@ -1,3 +1,25 @@
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en`;
+    fetch(geoApiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          alert(
+            "Unable to fetach the ip address. Please search any location in the search bar"
+          );
+          throw new Error("Location.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        let city = data.city;
+        weather.fetchWeather(city);
+        news.fetchNews(city);
+      });
+  });
+}
+
 let weather = {
   apiKey: "20957daa73739ee04a5f325baf22699d",
   fetchWeather: function (city) {
@@ -94,17 +116,3 @@ document
       news.search();
     }
   });
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function (position) {
-    const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&localityLanguage=en`;
-    fetch(geoApiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        let city = data.city;
-        weather.fetchWeather(city);
-        news.fetchNews(city);
-      });
-  });
-}
