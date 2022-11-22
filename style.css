@@ -8,32 +8,36 @@
 body {
   color: rgb(255, 255, 255);
   position: relative;
-  font-family: "Noto Sans Mono", monospace;
-  font-family: "Oswald", sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.toptopic {
-  height: 80vh;
-  width: 100%;
-  display: grid;
-  justify-content: center;
-  align-items: center;
+#main {
+  padding: 6rem 4rem 4rem 4rem;
 }
+.top {
+  display: flex;
+  padding: 2% 6%;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 40px;
+  position: sticky;
+}
+.top h1 {
+  justify-items: center;
+}
+
 .card {
+  justify-self: flex-end;
   background: #000000;
   padding: 2em;
   border-radius: 30px;
   width: 100vh;
   max-width: 300px;
   margin: 1em;
-  position: absolute;
-  top: 0px;
-  right: 0;
 }
 
 .local-news h1 {
-  font-size: 30px;
+  font-size: 65px;
   text-transform: uppercase;
   text-align: center;
   margin: 150px;
@@ -98,14 +102,19 @@ input.search-bar {
   top: 0;
   left: 20 px;
 }
-
-@media (max-width: 700px) {
-  .local-news h1 {
-    font-size: 20px;
-  }
+.toptopic {
+  height: 80vh;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
-.title {
+.toptopic h1 {
+  font-size: 55px;
   text-align: center;
+}
+.toptopic p {
+  font-size: 20px;
 }
 .topicsContents {
   display: flex;
@@ -113,6 +122,7 @@ input.search-bar {
   margin: 100px;
   gap: 70px;
 }
+
 .topic1 a {
   display: inline-block;
   text-decoration: none;
@@ -122,6 +132,7 @@ input.search-bar {
   font-size: 13px;
   background: transparent;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .topic1 a:hover {
@@ -131,5 +142,22 @@ input.search-bar {
   transition: 0.5s;
 }
 
-@media (max-width: 700px) {
+/* smaller screen */
+@media screen and (max-width: 736px) {
+  .top {
+    display: block;
+  }
+  .local-news h1 {
+    font-size: 30px;
+    margin: 50px;
+  }
+  .toptopic {
+    display: block;
+  }
+  .toptopic h1 {
+    font-size: 30px;
+  }
+  .topicsContents {
+    display: block;
+  }
 }

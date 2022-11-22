@@ -70,7 +70,7 @@ let news = {
     // a.setAttribute("href", data[0].url);
     (document.querySelector(".title").innerText = data[0].title),
       (document.querySelector(".image").src = data[0].urlToImage),
-      (document.querySelector(".information").innerText = data[0].description),
+      (document.querySelector(".information").innerText = data[0].content),
       (document.querySelector(".url").href = data[0].url);
     // }
   },
